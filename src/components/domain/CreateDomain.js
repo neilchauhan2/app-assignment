@@ -11,17 +11,14 @@ class CreateDomain extends Component {
     this.setState({
       [e.target.id]: e.target.value
     });
-
+    setTimeout(this.props.checkAvailability(this.state.domain), 2000)
   };
 
   onSubmit = e => {
     e.preventDefault();
-    this.props.checkAvailability(this.state.domain);
   }
 
   render() {
-    console.log(window.location);
-    console.log(this.props.domain);
     return (
       <div className="domain-section container box">
         <h2 className="is-size-2">Domain</h2>
@@ -36,7 +33,8 @@ class CreateDomain extends Component {
               onChange={this.onChange}
             />
           </div>
-          <p className="help is-success is-size-6">Domain available</p>
+          {this.state.domain && this.props.available ? <p className="help is-success is-size-6">Domain Available</p> : null}
+          {this.state.domain && !this.props.available ? <p className="help is-danger is-size-6">Domain Unavailable</p> : null}
         </div>
         <button onClick={this.onSubmit} className=" button is-link is-fullwidth">Create Domain</button>
       </div>
