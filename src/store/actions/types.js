@@ -1,0 +1,3 @@
+// Domain
+export const CHECK_AVAILABILITY = "CHECK_AVAILABILITY";
+export const REGISTER_DOMAIN = "RESGISTER_DOMAIN";

@@ -1,15 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Domain from "./components/domain/Domain";
+import CreateDomain from "./components/domain/CreateDomain";
 import './App.css';
 
 function App() {
   return (
-    <Router>  
+    <Router>
       <div className="App">
         <Switch>
-        <Route exact path="/" component={Domain} />
-        </Switch> 
+          <Route exact path="/createDomain" component={CreateDomain} />
+        </Switch>
       </div>
     </Router>
   );
