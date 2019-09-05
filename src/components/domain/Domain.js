@@ -5,10 +5,6 @@ class Domain extends Component {
         domain : ""
     }
 
-    checkAvailability = () => {
-
-    }
-
     onChange = e => {
         this.setState({
           [e.target.id]: e.target.value
