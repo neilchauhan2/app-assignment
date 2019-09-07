@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import CreateDomain from "./components/domain/CreateDomain";
 import Navbar from "./components/layouts/Navbar";
 import './App.css';
+import SubdomainApp from './components/subdomainApp/SubdomainApp';
 
 
 // extract current doman/subdomain
@@ -18,7 +19,8 @@ function App() {
             host === "localhost" ?
               <Route exact path="/" component={CreateDomain} />
               : // routes for the subdomain 
-              <h1> 404 page does not exist! </h1>}
+              <Route exact path="/" component={SubdomainApp} />
+          }
         </Switch>
       </div>
     </Router>

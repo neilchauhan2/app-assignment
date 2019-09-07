@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Login from "../auth/Login";
 
 class Navbar extends Component {
   componentDidMount = () => {
@@ -36,7 +37,7 @@ class Navbar extends Component {
 
     return (
       <header>
-        <nav className="navbar is-link" role="navigation" aria-label="main navigation">
+        <nav className="navbar" role="navigation" aria-label="main navigation">
           <div className="navbar-brand">
             <Link className="navbar-item" to="/">
               <h1 className="is-size-4 ">
@@ -63,6 +64,10 @@ class Navbar extends Component {
               {/* <Link to="#" className="navbar-item">
                 Create Domain
               </Link> */}
+              <div className="navbar-item">
+                {/* <SignUp />  */}
+                <Login />
+              </div>
             </div>
           </div>
         </nav>

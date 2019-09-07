@@ -1,6 +1,6 @@
 const initState = {};
 
-const personReducer = (state=initState, action) => {
+const personReducer = (state = initState, action) => {
     return state;
 }
 
