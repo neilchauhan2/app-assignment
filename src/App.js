@@ -16,7 +16,7 @@ function App() {
         <Switch>
           { //routes for localhost or the base url 
             host === "localhost" ?
-              <Route exact path="/createDomain" component={CreateDomain} />
+              <Route exact path="/" component={CreateDomain} />
               : // routes for the subdomain 
               <h1> 404 page does not exist! </h1>}
         </Switch>

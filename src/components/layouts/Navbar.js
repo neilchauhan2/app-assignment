@@ -60,9 +60,9 @@ class Navbar extends Component {
 
           <div id="navbarBasicExample" className="navbar-menu">
             <div className="navbar-end">
-              <Link to="#" className="navbar-item">
+              {/* <Link to="#" className="navbar-item">
                 Create Domain
-              </Link>
+              </Link> */}
             </div>
           </div>
         </nav>
