@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-import Login from '../auth/Login'
+import Graph from '../graph/Graph'
+
 
 export class SubdomainApp extends Component {
   render() {
     return (
       <div>
         <h1 className="is-size-1">Welcome to my subdomain</h1>
-        {/* <Login /> */}
+        <Graph />
       </div>
     )
   }
