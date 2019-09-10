@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Login from "../auth/Login";
-import SignUp from "../auth/SignUp";
+import { connect } from 'react-redux';
+import SubDomainNavs from "./SubDomainNavs";
 
 class Navbar extends Component {
   componentDidMount = () => {
@@ -65,10 +65,7 @@ class Navbar extends Component {
               {/* <Link to="#" className="navbar-item">
                 Create Domain
               </Link> */}
-              <div className="navbar-item">
-                <SignUp /> 
-                <Login />
-              </div>
+              {this.props.location === "localhost" ? " " : <SubDomainNavs />}
             </div>
           </div>
         </nav>
@@ -77,5 +74,10 @@ class Navbar extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    location: state.location.location
+  }
+}
 
-export default Navbar;
+export default connect(mapStateToProps)(Navbar);
