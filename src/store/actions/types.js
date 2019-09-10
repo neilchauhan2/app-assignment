@@ -4,3 +4,4 @@ export const REGISTER_DOMAIN = "RESGISTER_DOMAIN";
 export const SET_DOMAIN = "SET_DOMAIN";
 // loaction
 export const GET_LOCATION = "GET_LOCATION";
+export const SET_SUBDOMAIN = "SET_SUBDOMAIN";

@@ -1,7 +1,8 @@
-import { GET_LOCATION } from "../actions/types";
+import { GET_LOCATION, SET_SUBDOMAIN } from "../actions/types";
 
 const initState = {
-  location: ""
+  location: "",
+  subdomain: ""
 }
 
 const locationReducer = (state = initState, action) => {
@@ -10,6 +11,11 @@ const locationReducer = (state = initState, action) => {
       return {
         ...state,
         location: action.payload
+      }
+    case SET_SUBDOMAIN:
+      return {
+        ...state,
+        subdomain: action.payload
       }
     default:
       return state;

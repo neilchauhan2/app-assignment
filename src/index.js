@@ -6,10 +6,12 @@ import App from './App';
 import store from "./store/store";
 import { Provider } from "react-redux";
 import * as serviceWorker from './serviceWorker';
-import { getLocation } from './store/actions/locationActions';
+import { getLocation, setSubdomain } from './store/actions/locationActions';
 
 // get current domain location
 store.dispatch(getLocation());
+// set subdomain
+store.dispatch(setSubdomain());
 
 ReactDOM.render(
     <Provider store={store}>
