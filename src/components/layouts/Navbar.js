@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Login from "../auth/Login";
+import SignUp from "../auth/SignUp";
 
 class Navbar extends Component {
   componentDidMount = () => {
@@ -65,7 +66,7 @@ class Navbar extends Component {
                 Create Domain
               </Link> */}
               <div className="navbar-item">
-                {/* <SignUp />  */}
+                <SignUp /> 
                 <Login />
               </div>
             </div>
