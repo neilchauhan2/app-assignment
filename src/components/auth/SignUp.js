@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-// import { register } from "../store/actions/authActions";
-// import { clearErrors } from "../store/actions/errorActions";
+import { register } from "../../store/actions/authActions";
 import { Link } from "react-router-dom";
 
 class SignUp extends Component {
@@ -15,19 +14,13 @@ class SignUp extends Component {
   };
 
   componentDidUpdate(prevProps) {
-    const { error } = this.props;
-    if (error !== prevProps.error) {
-      if (error.id === "REGISTER_FAIL") {
-        this.setState({
-          msg: error.msg
-        });
-      } else {
-        this.setState({
-          msg: null
-        });
+      if (this.state.show) {
+      if (this.props.isAuthenticated) {
+        this.toggle();
       }
     }
   }
+
 
   onToggle = e => {
     e.preventDefault();
@@ -143,10 +136,11 @@ class SignUp extends Component {
 
 const mapStateToProps = state => {
   return {
+      isAuthenticated: state.auth.isAuthenticated
   };
 };
 
 export default connect(
   mapStateToProps,
-  { /*clearErrors, register*/ }
+  { register }
 )(SignUp);

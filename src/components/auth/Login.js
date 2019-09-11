@@ -1,7 +1,7 @@
-
 import React, { Component } from "react";
-
+import { login } from "../../store/actions/authActions";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 class Login extends Component {
   state = {
@@ -9,21 +9,6 @@ class Login extends Component {
     password: "",
     show: false
   };
-
-  // componentDidUpdate(prevProps) {
-  //   const { error } = this.props;
-  //   if (error !== prevProps.error) {
-  //     if (error.id === "LOGIN FAIL") {
-  //       this.setState({
-  //         msg: "Please enter the correct username and password!"
-  //       });
-  //     } else {
-  //       this.setState({
-  //         msg: null
-  //       });
-  //     }
-  //   }
-  // }
 
   onToggle = e => {
     e.preventDefault();
@@ -39,12 +24,20 @@ class Login extends Component {
       username,
       password
     };
-    // this.props.login(user);
+    this.props.login(user);
   };
 
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
+
+  componentDidUpdate(prevProps) {
+      if (this.state.show) {
+      if (this.props.isAuthenticated) {
+        this.toggle();
+      }
+    }
+  }
 
   render() {
     return (
@@ -107,6 +100,15 @@ class Login extends Component {
     );
   }
 }
+const mapStateToProps = state => {
+  return {
+      isAuthenticated: state.auth.isAuthenticated
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { login }
+)(Login);
 
 
-export default Login;
